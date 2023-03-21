@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.bgimg-1, .bgimg-2, .blackimg {
+    background-attachment: fixed;
+    position: relative;
+    }
+
+.bgimg-1 {
+    background-image: url(../../images/Spiderman.jpg);
+    min-height: 1000px;
+    background-size: cover;
+    }
+.bgimg-2 {
+    background-image: url(../../images/Scaiazzo.jpg);
+    min-height: 1000px;
+    background-size: cover;
+    }
+.blackimg {
+    background-image: url(../../images/black.jpg);
+    min-height: 1000px;
+    }
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    }

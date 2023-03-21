@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body
+{
+    text-align: center;
+}
+
+.inv-tab {
+    width: 500px;
+    height: 1000px;
+    padding: auto;
+    margin: auto;
+}
+
+.h2 {
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 200px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    font-family: 'Times New Roman';
+    text-decoration: none;
+}
+
+.profile-photo {
+    display: inline-block;
+    width: 500px;
+    height: auto;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: auto;
+}

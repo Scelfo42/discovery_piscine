@@ -1,0 +1,11 @@
+body {
+    background-color: snow;
+}
+
+button {
+    background-color: dimgrey;
+    font-size: medium;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
