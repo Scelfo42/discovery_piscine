@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Balloon</title>
+        <style>
+            .balloon {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                border-radius: 50%;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="balloon"></div>
+        <script>
+            let balloon = document.querySelector('.balloon');
+            let max_dimension = 420;
+            let min_dimension = 200;
+            balloon.addEventListener('click', get_bigger_change_color);
+            balloon.addEventListener('mouseleave', get_smaller_reverse_color);
+            function get_bigger_change_color() {
+                let newWidth = balloon.offsetWidth + 10;
+                let newHeight = balloon.offsetHeight + 10;
+                let currentColor = balloon.style.backgroundColor;
+                let newColor = select_color(currentColor, 'normal');
+                if (newWidth > max_dimension) {
+                    newWidth = min_dimension;
+                    newHeight = min_dimension;
+                    newColor = 'red';
+                }
+                balloon.style.backgroundColor = newColor;
+                balloon.style.width = newWidth + 'px';
+                balloon.style.height = newHeight + 'px';
+            }
+            function select_color(currentColor, mode) {
+                let color;
+                if (mode == 'normal') {
+                    switch (currentColor) {
+                        case 'green':
+                            color = 'blue';
+                            break;
+                        case 'blue':
+                            color = 'red';
+                            break;
+                        default:
+                            color = 'green';
+                    }
+                }
+                else {
+                    switch (currentColor) {
+                        case 'green':
+                            color = 'red';
+                            break;
+                        case 'blue':
+                            color = 'green';
+                            break;
+                        default:
+                            color = 'blue';
+                    }
+                }
+                return color;
+            }
+            function get_smaller_reverse_color() {
+                let newWidth = balloon.offsetWidth - 5;
+                let newHeight = balloon.offsetHeight - 5;
+                let currentColor = balloon.style.backgroundColor;
+                let newColor = select_color(currentColor, 'reverse');
+                if (newWidth < min_dimension) {
+                    newWidth = min_dimension;
+                    newHeight = min_dimension;
+                }
+                balloon.style.backgroundColor = newColor;
+                balloon.style.width = newWidth + 'px';
+                balloon.style.height = newHeight + 'px';
+            }
+            </script>
+    </body>
+</html>
