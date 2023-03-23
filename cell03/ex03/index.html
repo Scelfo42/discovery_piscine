@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>To Do List</title>
+        <style>
+            * {
+                margin: 10px;
+                padding: 20px;
+            }
+            body {
+                font-family: sans-serif;
+                font-size: medium;
+                background-color: #679289;
+                text-align: center;
+            }
+            .container {
+			background-color: papayawhip;
+			width: 500px;
+			height: calc(100vh - 150px);
+			border-radius: 7px;
+			margin: auto;
+			padding: 30px 30px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		    }
+
+            .title {
+                margin: auto;
+                padding: 20px;
+                color: papayawhip;
+                width: 80%;
+            }
+
+            button {
+                font-size: 30px;
+                margin-bottom: 5px;
+                background-color: turquoise;
+                color: black;
+                border: 3px;
+                text-overflow: auto;
+            }
+
+            button:hover {
+                background-color: aquamarine;
+                color: hotpink;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>To Do List</h1>
+        <button onclick="addToDo()">New</button>
+        <div class="container">
+            <div class="ft_list" id="ft_list"> 
+            </div>
+        </div>       
+        <script src="todo.js"></script>
+    </body>
+</html>
