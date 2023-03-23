@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculator</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style>
+            #calc {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+                margin-top: calc(50vh - 150px);
+            }
+            #num1, #num2 {
+                width: 100px;
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid black;
+                text-align: center;
+            }
+            #op {
+                width: 50px;
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid black;
+                text-align: center;
+            }
+            button {
+                width: 100px;
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid black;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="calc">
+            <input type="number" id="num1" placeholder="Write a number">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="number" id="num2" placeholder="Write another number">
+            <button onclick="calculate()">Calculate</button>
+        </div>
+        <script>
+            function calculate() {
+                const num1 = $("#num1").val();
+                const num2 = $("#num2").val();
+                const op = $("#operator").val();
+                let result = 0;
+                console.log(num1, num2, op);
+                if (num1 < 0 || num2 < 0) {
+                    console.log("Error!");
+                    alert("Error!");
+                    return;
+                }
+                else {
+                if (op == "+") {
+                    result = parseInt(num1) + parseInt(num2);
+                }
+                else if (op == "-") {
+                    result = parseInt(num1) - parseInt(num2);
+                }
+                else if (op == "*") {
+                    result = parseInt(num1) * parseInt(num2);
+                }
+                else if ((op == "/" || op == "%") && num2 == 0) {
+                    console.log("It's over 9000!");
+                    alert("It's over 9000!");
+                    return;
+                }
+                else if (op == "/") {
+                    result = parseInt(num1) / parseInt(num2);
+                }
+                else if (op == "%") {
+                    result = parseInt(num1) % parseInt(num2);
+                }
+                else {
+                    result = "Error!"
+                }
+                }
+                console.log(result);
+                alert(result);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Balloon explode animation</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style>
+            #balloon {
+                background-color: red;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                transition: all 0.5s ease;
+                margin: auto;
+                margin-top: calc(50vh - 150px);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="balloon" onclick="get_bigger()" onmouseleave="get_smaller()"></div>
+        <script>
+            const balloon = $("#balloon");
+            let color = ["red", "green", "blue"];
+            let size = 200;
+            let i = 0;
+            function get_bigger() {
+                i += 1;
+                if (size < 420)
+                    size += 10;
+                else
+                    size = 200;
+                change(i);
+            }
+            function get_smaller() {
+                i -= 1;
+                if (size > 200)
+                    size -= 5;
+                else
+                    size = 200;
+                change(i);
+            }
+            function change(number) {
+                balloon.css("width", size + "px");
+                balloon.css("height", size + "px");
+                if (size > 200) {
+                    if (i < 0) { i += 3; }
+                    if (number % 3 == 0)
+                        balloon.css("background", "red");
+                    else if (number % 3 == 1)
+                        balloon.css("background", "green");
+                    else if (number % 3 == 2)
+                        balloon.css("background", "blue");
+                    number += 1;
+                }
+            }
+        </script>
+    </body>
+</html>

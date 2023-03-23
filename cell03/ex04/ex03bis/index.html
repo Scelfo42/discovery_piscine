@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>To-Do List</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<style>
+		* {
+            margin: 0;
+            padding: 0;
+		}
+
+		body {
+			text-align: center;
+			background-color: hotpink;
+        }
+		.container {
+			background-color: honeydew;
+			width: 500px;
+			height: 500px;
+			border-radius: 7px;
+			margin: auto;
+			padding: 30px 30px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		.title {
+			margin: auto;
+			padding: 20px;
+			color: seashell;
+			width: 80%;
+		}
+
+		button {
+			font-size: 20px;
+			margin-bottom: 5px;
+			background-color: transparent;
+			color: #679289;
+			border: none;
+			text-overflow: auto;
+		}
+
+		button:hover {
+			font-size: 20px;
+			margin-bottom: 5px;
+			background-color: #679289;
+			color: seashell;
+			border: none;
+			border-radius: 5px;
+			text-overflow: auto;
+		}
+
+		.ft_list {
+			display: flex;
+			flex-direction: column;
+			color: #679289;
+			width: 100%;
+			list-style: none;
+		}
+
+		h1 {
+			margin: auto;
+			padding: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 class="title">To-Do List <button onclick="newButton()" style="
+		padding: 20;
+		position: relative;
+		bottom: 5px;
+		background-color: seashell;
+		border: none;
+		border-radius: 5px;
+		font-size: 18px;
+		font-weight: bold;
+		color: #679289;">New</button></h1>
+	<div class="container">
+		<div class="ft_list" id="ft_list"></div>
+	</div>
+	<script src="todo.js"></script>
+</body>
+
+</html>

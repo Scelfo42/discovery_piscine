@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Backgroound</title>
+        <link rel="stylesheet" href="backgroound.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- This is the jQuery library. Always to put in the head-->
+    </head>
+    <body>
+        <script>
+            $(document).ready(() => {
+                $("button").click(() => {
+                    $("body").css("background-color", random_color())
+                })
+            })
+            let color = 0;
+            function random_color() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        </script>
+        <button>Click me!</button>
+    </body>
+</html>
